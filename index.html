@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<!-- 
+    Part#5: The Same-Origin Policy, 5 points
+    My website bart.swastibhat.com is requesting API from my end points like bart.swastibhat.com/stations, etc
+    which are hosted in the same server. Hence they do not violate same origin policy.
+    Even if I requested for the API's at the original BART server from my webpage, I would be able to access it because 
+    BART server sets "Access-Control-Allow-Origin:" to "*" . Thus all are able to access it.   
+ -->
+<head>
+      <title>BART</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="./jquery.countdown.min.js"></script>
+
+    <script src="./clientSide.js"></script>
+   <link href="./style.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body onload="BodyOnLoad()">
+
+    <div class="container">
+
+        <header>
+            <h1>BART: Bay Area Rapid Transit</h1>
+
+            <h4 id="visitNumber">Welcome! Your visit number is: </h4>
+        </header>
+
+        <div class="wrapper">
+            <section id="contentPlace">
+                <div class="planNsee">
+                    <table class="planNsee">
+                        <tr>
+                            <td style="width: 40%">
+                                <h2>Plan your Trip</h2>
+                                <div class="plannerSelection">
+                                    <table>
+                                        <tr>
+                                            <td>Sourrce Station</td>
+
+                                            <td class="stationList" id="sourceStation" onchange="CheckSelection(true)">
+                                                <select id = "sourceSelector"></select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Destination Station</td>
+
+                                            <td class="stationList" id="destStation" onchange="CheckSelection(false)">
+                                                <select id = "destSelector"></select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" style="text-align: center">Next train will arrive in </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" id="timer" style="text-align: center"> </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                            <td style="width: 60%">
+                                <div id="map"></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="plannerTable">
+                    <table id="tripDetailsTable">
+                    </table>
+                </div>
+
+            </section>
+
+            <aside>
+                <h2>Station Information</h2>
+                <div id="sourceStationInfo">
+                </div>
+            </aside>
+
+        </div>
+        <footer>Rights reserved by Swastika Bhat</footer>
+    </div>
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>

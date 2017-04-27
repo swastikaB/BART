@@ -1,0 +1,127 @@
+
+        div.container {
+            width: 100%;
+            border: 1px solid gray;
+            height: 100%;
+        }
+
+
+
+        header,
+        footer {
+            padding: 1em;
+            color: rgb(0, 51, 153);
+            background-color: rgb(128, 170, 255);
+            clear: left;
+            text-align: center;
+        }
+
+
+        h1,
+        h2,
+        h3 {
+            text-align: center;
+            color: rgb(0, 51, 153);
+        }
+
+
+
+        aside {
+            float: right;
+            margin: 0 1.5%;
+            width: 30%;
+        }
+
+
+
+        aside ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+
+
+         /*{
+            text-decoration: none;
+            text-align: justify;
+        }*/
+
+
+
+        section {
+            float: left;
+            width: 63%;
+            border-right: 1px solid gray;
+            color: rgb(0, 51, 153);
+            padding: 1em;
+            overflow: hidden;
+        }
+
+
+        div.wrapper {
+            display: flex;
+        }
+
+
+        td,
+        th {
+            padding: 15px 15px 15px 15px;
+        }
+
+
+        .plannerTable,
+        .plannerSelection {
+            padding: 20px 0 20px 0;
+        }
+
+
+        table {
+            border-collapse: collapse;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+
+        table.plannerTable,
+        .plannerTable td,
+        .plannerTable th {
+            border: 1px solid black;
+            padding: 10px 20px 10px 20px;
+            text-align: center;
+        }
+
+
+
+        select {
+            width: 200px;
+        }
+
+
+        strong {
+            text-transform: capitalize;
+        }
+
+
+
+        #map {
+            height: 400px;
+            margin: 0;
+            width: 100%;
+        }
+
+
+        #contentPlace {
+            float: left;
+            width: 70%;
+        }
+
+        #tripTable {
+            float: left;
+            width: 100%;
+        }
+
+        .planNsee {
+            width: 100%;
+        }
+      
