@@ -9,11 +9,14 @@
     "fs": "0.0.1-security",
     "json-query": "^2.2.0",
     "node-rest-client": "^2.5.0",
+    "webpack": "^3.10.0",
     "xml2json": "^0.11.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack src/client/clientSide.js dist/bundle.js",
+    "build:prod": "webpack src/server/index.js dist/bundle.js -p"
   },
   "author": "Swastika Bhat",
   "license": "ISC"

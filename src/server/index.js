@@ -92,9 +92,9 @@ app.get('/trips', function (req, res) {
 * Handle requests for homepage 
 */
 app.get('/', function (req, res) {
-    fs.readFile('../client/index.html', 'utf8', function(err, text){
-      if(error){
-        console.log("Coud not find '../client/index.html file");
+    fs.readFile('./src/client/index.html', 'utf8', function(err, text){
+      if(err){
+        console.log("Coud not find ../client/index.html file");
         return;
     }
           res.send(text);
@@ -103,7 +103,7 @@ app.get('/', function (req, res) {
 
 app.get('/*.js', function (req, res) {
     fs.readFile(req.path.substring(1), 'utf8', function(err, text){
-      if(error){
+      if(err){
         console.log("Coud not find /*.js file");
         return;
       }
@@ -114,7 +114,7 @@ app.get('/*.js', function (req, res) {
 
 app.get('/*.css', function (req, res) {
   fs.readFile(req.path.substring(1), 'utf8', function(err, text){
-    if(error){
+    if(err){
         console.log("Coud not find /*.css file");
         return;
     }

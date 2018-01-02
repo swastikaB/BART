@@ -9,16 +9,13 @@
  -->
 <head>
       <title>BART</title>
-        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-        <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
-        <script src="./jquery.countdown.min.js"></script>
-
-    <script src="./clientSide.js"></script>
-   <link href="./style.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <script src="./dist/bundle.js"></script>
+   <link href="./src/client/style.css" rel="stylesheet" type="text/css" />
 
 </head>
 
-<body onload="BodyOnLoad()">
+<body>
 
     <div class="container">
 
@@ -40,14 +37,14 @@
                                         <tr>
                                             <td>Sourrce Station</td>
 
-                                            <td class="stationList" id="sourceStation" onchange="CheckSelection(true)">
+                                            <td class="stationList" id="sourceStation">
                                                 <select id = "sourceSelector"></select>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>Destination Station</td>
 
-                                            <td class="stationList" id="destStation" onchange="CheckSelection(false)">
+                                            <td class="stationList" id="destStation">
                                                 <select id = "destSelector"></select>
                                             </td>
                                         </tr>
