@@ -93,12 +93,20 @@ app.get('/trips', function (req, res) {
 */
 app.get('/', function (req, res) {
     fs.readFile('../client/index.html', 'utf8', function(err, text){
+      if(error){
+        console.log("Coud not find '../client/index.html file");
+        return;
+    }
           res.send(text);
     });
 });
 
 app.get('/*.js', function (req, res) {
     fs.readFile(req.path.substring(1), 'utf8', function(err, text){
+      if(error){
+        console.log("Coud not find /*.js file");
+        return;
+      }
       res.setHeader("content-type", "text/javascript; charset=UTF-8")
           res.send(text);
     });
@@ -106,6 +114,10 @@ app.get('/*.js', function (req, res) {
 
 app.get('/*.css', function (req, res) {
   fs.readFile(req.path.substring(1), 'utf8', function(err, text){
+    if(error){
+        console.log("Coud not find /*.css file");
+        return;
+    }
     res.setHeader("content-type", "text/css; charset=UTF-8");
         res.send(text);
   });
