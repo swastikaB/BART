@@ -91,10 +91,14 @@ function fetchAndDisplayContent() {
 function getStationJson(sourceStation, destinationStation) {
     var selectSource = document.getElementById("sourceSelector");
     var selectDest = document.getElementById("destSelector");
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', '/stations', true);
-    xhr.send(null);
-    xhr.onreadystatechange = function () {//Call a function when the state changes.
+    let promiseStationList = new Promise((resolve, reject) =>{
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '/stations', true);
+        xhr.send(null);
+        xhr.onload = () => resolve(xhr);
+        xhr.onerror = () => reject();
+    });//Call a function when the state changes.
+     promiseStationList.then((xhr) => {
         if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
             var stations = JSON.parse(xhr.response);
             var len = stations.length;
@@ -121,7 +125,7 @@ function getStationJson(sourceStation, destinationStation) {
             document.getElementById("sourceSelector").selectedIndex = sourceStation;
             document.getElementById("destSelector").selectedIndex = destinationStation;
         }
-    }
+    });
 }
 
 function deleteStationList(srcStn, destStn) {
