@@ -29,12 +29,7 @@ app.get('/stations', function (req, res) {
   */
   client.get("http://api.bart.gov/api/stn.aspx?cmd=stns&key=MW9S-E7SL-26DU-VV8V", function (data, response) {
     var stations = data.root.stations[0].station;
-    /* var len = stations.length; 
-        for (var i = 0; i < len; i++) {
-        stationNameList += ("\n" + stations[i].name[0]);
-        }
-    console.log(stationNameList);
-    */
+    
     //console.log("All staions have been listed");
     //res.send(JSON.stringify(stations));
     res.setHeader("Access-Control-Allow-Origin", "*");
@@ -97,7 +92,7 @@ app.get('/trips', function (req, res) {
 * Handle requests for homepage 
 */
 app.get('/', function (req, res) {
-    fs.readFile('index.html', 'utf8', function(err, text){
+    fs.readFile('../client/index.html', 'utf8', function(err, text){
           res.send(text);
     });
 });
@@ -116,11 +111,3 @@ app.get('/*.css', function (req, res) {
   });
 });
 
-/*response.writeHead(200,{"Content-type" : "text/css"});
-  var fileContents = fs.readFileSync('./views/styles.css', {encoding: "utf8"}, function(err, data) {
-    if (!err) {
-      response.write(data);
-    } else {
-      console.log(err);
-    }
-    });*/
