@@ -65,10 +65,8 @@ function loadMap() {
 // Refresh the content every 30 seconds
 // Its like a chain reaction. In intervals fetch the source station and it will in turn call all other BART APIs
 function fetchLatestContent() {
-    var timer = setTimeout(function () {
-        fetchAndDisplayContent();
-        timer = setTimeout(arguments.callee, 30000);
-    }, 0)
+    fetchAndDisplayContent();
+    var timer = setInterval(fetchAndDisplayContent, 30000);
 }
 
 function fetchAndDisplayContent() {
